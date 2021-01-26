@@ -9,7 +9,6 @@ import UIKit
 
 class RoundedCollectionViewCell: UICollectionViewCell {
     
-    // MARK: - Variables
 
     lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
@@ -24,7 +23,6 @@ class RoundedCollectionViewCell: UICollectionViewCell {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "List"
         label.textColor = UIColor.black
         label.font = .preferredFont(forTextStyle: .headline)
         label.textAlignment = .center
@@ -38,7 +36,6 @@ class RoundedCollectionViewCell: UICollectionViewCell {
     
     lazy var secondaryLabel: UILabel = {
         let label = UILabel()
-//        label.text = "Age: \n Type: "
         label.textColor = UIColor.black
         label.font = .systemFont(ofSize: 10)
         label.textAlignment = .center
@@ -51,22 +48,9 @@ class RoundedCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var infoButton: UIButton = {
-        let button = UIButton(type: .custom) as UIButton
-        button.setBackgroundImage(UIImage(systemName: "square.grid.2x2"), for: .normal)
-        button.tintColor = .black
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        return button
-    }()
-    
-    // MARK:- Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupCell()
-
     }
     
     required init?(coder: NSCoder) {
@@ -76,23 +60,19 @@ class RoundedCollectionViewCell: UICollectionViewCell {
 
 extension RoundedCollectionViewCell {
     
-    // MARK: Setup Cell
+  
     fileprivate func setupCell() {
-        
         translatesAutoresizingMaskIntoConstraints = false
-        
-        
+    
         roundCorner()
         
         self.addSubview(iconImageView)
         self.addSubview(titleLabel)
         self.addSubview(secondaryLabel)
-        self.addSubview(infoButton)
         
         setLayoutConstraints()
     }
     
-    // MARK: Setup Layout Constrains
     func setLayoutConstraints() {
         NSLayoutConstraint.activate([
 
@@ -110,15 +90,9 @@ extension RoundedCollectionViewCell {
             titleLabel.bottomAnchor.constraint(equalTo: secondaryLabel.topAnchor, constant: -7),
             titleLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -8),
-            
-//            infoButton.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 28),
-            infoButton.centerYAnchor.constraint(equalTo: layoutMarginsGuide.centerYAnchor),
-            infoButton.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -12),
-            infoButton.widthAnchor.constraint(equalToConstant: 38),
-            infoButton.heightAnchor.constraint(equalToConstant: 38)
         ])
     }
-    // MARK: Setup round corners for CollectionViewCell
+    
     private func roundCorner() {
         self.layer.cornerRadius = 12
         self.layer.masksToBounds = true

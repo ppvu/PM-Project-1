@@ -7,7 +7,7 @@
 
 import Foundation
 
-// определяем тип пленеты
+// Planets' type
 enum PlanetTypes: String, CaseIterable {
     case terrestial = "Terrestial"
     case gasGiant = "Gas Giant"
@@ -15,36 +15,6 @@ enum PlanetTypes: String, CaseIterable {
     case dwarf = "Dwarf"
 }
 
-//final class Planet {
-//
-//    var nameGenerator = NameGenerator()
-//
-//    var name: String
-//    var type = PlanetTypes.allCases.randomElement()!
-//    var mass = UInt.random(in: 1...10000)
-//    var temp = UInt.random(in: 1...1000)
-//    var radius = UInt.random(in: 1...500)
-//    var satellites = [Planet]()
-//
-//    init(name: String, isPlanetSatellite: Bool) {
-//
-//        self.name = name
-//
-//        guard isPlanetSatellite == false else {
-//            return
-//        }
-//
-//        var quantityOfSatellites = UInt.random(in: 0...5)
-//
-//        while quantityOfSatellites > 0 {
-//            satellites.append(Planet(name: "Satellite \(nameGenerator)", isPlanetSatellite: true))
-//            quantityOfSatellites -= 1
-//        }
-//    }
-//}
-//---------------------- Planet -----------------------
-// определяем тип пленеты
-// структура инфы о планете
 struct PlanetInfo: ElementsInfo {
     var type : String
     var age: UInt
@@ -55,7 +25,8 @@ struct PlanetInfo: ElementsInfo {
     var satelitesQ: Int
     var creationTime: Int
 }
-//
+
+// Create Planet class
 final class Planet {
     private var name: String
     private var age: UInt
@@ -71,19 +42,26 @@ final class Planet {
         self.name = nameGenerator(prefix: pref, length: 5)
         self.age = 0
         self.type = PlanetTypes.allCases.randomElement()!
-        self.mass = Int.random(in: 1...10)
-        self.temp = Int.random(in: 1...10)
-        self.radius = Int.random(in: 1...10)
-        self.satellites = Int.random(in: 0...5)
-        self.info = PlanetInfo(type: self.type.rawValue, age: self.age, name: self.name, mass: self.mass, temperature: self.temp, radius: self.radius, satelitesQ: self.satellites, creationTime: self.creationTime)
+        self.mass = Int.random(in: 1...100)
+        self.temp = Int.random(in: 1...100)
+        self.radius = Int.random(in: 1...100)
+        self.satellites = Int.random(in: 0...4)
+        self.info = PlanetInfo(type: self.type.rawValue,
+                               age: self.age,
+                               name: self.name,
+                               mass: self.mass,
+                               temperature: self.temp,
+                               radius: self.radius,
+                               satelitesQ: self.satellites,
+                               creationTime: self.creationTime)
         self.createPlanet()
     }
-    // возвращаем инфу планете
+    // Return Planet Info
     func createPlanet() -> PlanetInfo {
         return info
     }
 }
-// класс планета
+// Class Planet
 final class SinglePlanet {
     private var name: String
     private var age: UInt = 0
@@ -95,26 +73,35 @@ final class SinglePlanet {
     private var satellitesData: [PlanetInfo] = []
     private var creationTime: Int = 0
     private var info: PlanetInfo
+    
     init() {
         self.name = nameGenerator(prefix: "PL", length: 5)
         self.type = PlanetTypes.allCases.randomElement()!
-        self.mass = Int.random(in: 1...10)
-        self.temp = Int.random(in: 1...10)
-        self.radius = Int.random(in: 1...10)
-        self.satellites = Int.random(in: 0...5)
+        self.mass = Int.random(in: 1...100)
+        self.temp = Int.random(in: 1...100)
+        self.radius = Int.random(in: 1...100)
+        self.satellites = Int.random(in: 0...4)
         for _ in 0...self.satellites {
             self.satellitesData.append(Planet(pref: "SPL").createPlanet())
         }
-        self.info = PlanetInfo(type: self.type.rawValue, age: self.age, name: self.name, mass: self.mass, temperature: self.temp, radius: self.radius, satelitesQ: self.satellites, creationTime: self.creationTime)
+        self.info = PlanetInfo(type: self.type.rawValue,
+                               age: self.age,
+                               name: self.name,
+                               mass: self.mass,
+                               temperature: self.temp,
+                               radius: self.radius,
+                               satelitesQ: self.satellites,
+                               creationTime: self.creationTime)
     }
-    // возвращаем инфу о планете
+    
     func getPlanetInfo() -> PlanetInfo {
         return info
     }
-    // возвращаем инфу о спутниках
+ 
     func getPlanetSatelites() -> [PlanetInfo] {
         return self.satellitesData
     }
+    
     func addTime(timeSec: Int) {
         self.creationTime = timeSec
     }

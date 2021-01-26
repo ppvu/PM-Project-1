@@ -7,8 +7,6 @@
 
 import Foundation
 
-//=================== API ===================
-
 final class API {
     private var blackHoleMass: Int = 10000
     private var blackHoleRadius: Int = 10000
@@ -23,23 +21,14 @@ final class API {
 
     func getUNNamesList() -> [ElementsInfo] {
         let res = self.api.getUnInfo(data: .universe, elemQuantity: 100, page: 1)
-        
         return res
     }
     
-//    func getGLNamesList() -> [String] {
-//        return self.api.getNames(data: .universe, elemQuantity: 100, page: 1)
-//    }
-    
-    func getChildrenNamesList(parentName: String, data: ElementNames, elemQuantity: Int, page: UInt) -> [ElementsInfo] {
-        
+    func getChildrenNamesList(parentName: String, data: ElementNameForData, elemQuantity: Int, page: UInt) -> [ElementsInfo] {
         return self.api.getInfoArr(parentName: parentName , data: data, elemQuantity: elemQuantity, page: page)
     }
     
-
     func timeTick() {
         self.api.time()
     }
 }
-
-//API()

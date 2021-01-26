@@ -18,7 +18,7 @@ struct GLInfo: ElementsInfo {
     var age: UInt
     var type: GalaxyType
 }
-// класс галактика
+// Create a Galaxy class
 final class SingleGalaxy {
     
     private var name: String
@@ -33,10 +33,11 @@ final class SingleGalaxy {
         self.name = nameGenerator(prefix: "GL", length: 5)
         self.info = GLInfo(name: self.name, age: self.age, type: self.type)
     }
-    // возвращаем инфу о галактике
+    // Return info about Galaxies
     func getGalaxyInfo() -> GLInfo {
         return info
     }
+    
     func addTime(timeSec: UInt) {
         self.age = timeSec
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-// тип звезды
+// Type of Stars
 enum TypeOfStar: String, CaseIterable {
     case protostar = "Protostar"
     case tTauriStar = "T-Tauri Star"
@@ -18,14 +18,14 @@ enum TypeOfStar: String, CaseIterable {
     case neutronStar = "Neutron Star"
     case superGiantStar = "Super Giant Star"
 }
-// стадия эволюци звезды
+// Stars' Evolution Stage
 enum StarEvolutionStage: String, CaseIterable {
     case young = "Young"
     case old = "Old"
     case denceDwarf = "Dence Dwarf"
     case blackHole = "Black Hole"
 }
-// инфа о звезде
+// Info about Stars
 struct StarInfo: ElementsInfo {
     var type : String
     var age: UInt
@@ -37,7 +37,7 @@ struct StarInfo: ElementsInfo {
     var luminosity: Int
     var creationTime: Int
 }
-// класс звезды
+// Create Star class
 final class MainStar {
     
     private var age: UInt = 0
@@ -55,7 +55,6 @@ final class MainStar {
 //    private var radiusToBecomeBlackHole: UInt
     
     init(){
-        
         self.name = nameGenerator(prefix: "MS", length: 5)
         self.type = TypeOfStar.allCases.randomElement()!
         self.evolutionStage = .young
@@ -64,14 +63,21 @@ final class MainStar {
         self.radius = Int.random(in: 1...100)
         self.luminosity = Int.random(in: 1...100)
         
-    
-        
-        self.info = StarInfo(type: self.type.rawValue, age: self.age, name: self.name, evolutionStage: self.evolutionStage.rawValue, mass: self.mass, temperature: self.temp, radius: self.radius, luminosity: self.luminosity, creationTime: self.creationTime)
+        self.info = StarInfo(type: self.type.rawValue,
+                             age: self.age,
+                             name: self.name,
+                             evolutionStage: self.evolutionStage.rawValue,
+                             mass: self.mass,
+                             temperature: self.temp,
+                             radius: self.radius,
+                             luminosity: self.luminosity,
+                             creationTime: self.creationTime)
     }
-    // возвращаем инфу о звезде
+    // Return the info about Stars
     func createStar() -> StarInfo {
         return info
     }
+    
     func addTime(timeSec: Int) {
         self.creationTime = timeSec
     }

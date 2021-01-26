@@ -28,7 +28,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         viewController.setData()
         viewController.type = .universe
         viewController.title = "My Universes"
-//        viewController.timer = 
         
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.prefersLargeTitles = true

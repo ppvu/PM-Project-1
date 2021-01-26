@@ -7,22 +7,19 @@
 
 import Foundation
 
+// Mark: - Protocol for all Space objects
 protocol ElementsInfo {
     var name: String { get set }
     var age: UInt { get set }
 }
-
+// Mark: - Universe struct
 struct UNInfo: ElementsInfo {
     var name: String
     var age: UInt
 }
-// класс вселенной
 
-
-
+// Create Universe class
 final class SingleUniverse {
-    
-   
     
     private var name: String
     private var lifeCicle: Int = 0
@@ -33,7 +30,7 @@ final class SingleUniverse {
         self.name = nameGenerator(prefix: "UN", length: 5)
         self.info = UNInfo(name: self.name, age: self.age)
     }
-    // возвращаем инфу о вселенной
+    // Return info about Universe
     func getUniverseInfo() -> UNInfo {
         return info
     }

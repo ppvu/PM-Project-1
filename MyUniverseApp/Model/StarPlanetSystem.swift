@@ -27,15 +27,17 @@ final class SingleStarPlanetSystem {
         self.maxQofPlanest = maxPlnQ
         self.name = nameGenerator(prefix: "SPS", length: 5)
         self.info = SPSInfoS(name: self.name, age: self.age)
-        star = MainStar().createStar()
+        self.star = MainStar().createStar()
     }
-    // return info about StarPlanetSystem
+    // Return info about StarPlanetSystem
     func getSPSInfo() -> SPSInfoS {
         return self.info
     }
+    
     func getStarInfo() -> StarInfo {
         return self.star
     }
+    
     func addPlanet() {
         if planetQ <= self.maxQofPlanest {
             self.planetQ += 1

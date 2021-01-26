@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     var api: API?
     var timer: Int = 0
     
-    var type: ElementNames = .universe
+    var type: ElementNameForData = .universe
     
     var objects: [ElementsInfo] = [] {
         didSet {
@@ -23,26 +23,14 @@ class MainViewController: UIViewController {
     }
     
     func setData() {
-//        if let res = api.getUNNamesList() {
-//        var apiGet = self.api?.getUNNamesList()
-//        self.objects = apiGet as [String]?
         if let res = self.api?.getUNNamesList() {
             self.objects = res
         }
     }
-//
-//    func setGLData() {
-//        if let res = api.getGLNamesList() {
-//            objects = res
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         setupCollectionView()
-        
     }
     
     func setupCollectionView() {
@@ -54,8 +42,10 @@ class MainViewController: UIViewController {
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView?.register(RoundedCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        
         collectionView?.delegate = self
         collectionView?.dataSource = self
+        
         collectionView?.backgroundColor = .white
         view.addSubview(collectionView!)
     }
@@ -65,41 +55,43 @@ class MainViewController: UIViewController {
         collectionView?.frame = view.bounds
     }
     
-    func getNewData(fromPar: String, type: ElementNames) {
-        
+    func getNewData(fromPar: String, type: ElementNameForData) {
         if let res = self.api?.getChildrenNamesList(parentName: fromPar, data: type, elemQuantity: 50, page: 1) {
-            print("for cell", res)
             self.objects = res
         }
     }
 }
 
-func setChildrenType(type: ElementNames) -> ElementNames {
-    
-    var result: ElementNames = .universe
+func setChildrenType(type: ElementNameForData) -> ElementNameForData {
+    var result: ElementNameForData = .universe
     
     switch type {
     case .universe: result = .galaxys
     case .galaxys: result = .sps
-    case .sps: result = .spsStars
-    case .spsStars: result = .planets
-    case .planets: result = .universe
+    case .sps: result = .planets
+    case .planets: result = .satellites
+    case .satellites: result = .satellites
     }
-    
     return result
 }
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = MainViewController()
-        viewController.api = self.api
-        let chType = setChildrenType(type: self.type)
-        viewController.type = chType
         let object = objects[indexPath.row]
-        viewController.getNewData(fromPar: String(object.name), type: chType)
-        viewController.title = object.name
-
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let parentName = String(object.name)
+        let dash = parentName.firstIndex(of: "-") ?? parentName.endIndex
+        let parentPrefix = parentName[..<dash]
+        if parentPrefix != "MS" && parentPrefix != "SPL" {
+            let viewController = MainViewController()
+            viewController.api = self.api
+            
+            let chType = setChildrenType(type: self.type)
+            viewController.type = chType
+            viewController.getNewData(fromPar: String(object.name), type: chType)
+            viewController.title = object.name
+            
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
 
@@ -111,8 +103,8 @@ extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RoundedCollectionViewCell
         cell.backgroundColor = .systemFill
+        
         let object = objects[indexPath.row]
-//        print("11234", object)
         cell.titleLabel.text = "\(object.name)"
         cell.secondaryLabel.text = "\(object.name)\n age: \(object.age)"
         return cell

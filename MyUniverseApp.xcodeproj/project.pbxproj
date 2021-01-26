@@ -9,17 +9,15 @@
 /* Begin PBXBuildFile section */
 		FE40C72D25BEDB7B0045AA99 /* Universe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C72C25BEDB7B0045AA99 /* Universe.swift */; };
 		FE40C73025BEDBAD0045AA99 /* Galaxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C72F25BEDBAD0045AA99 /* Galaxy.swift */; };
-		FE40C73325BEDBD80045AA99 /* StarSolarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73225BEDBD80045AA99 /* StarSolarSystem.swift */; };
+		FE40C73325BEDBD80045AA99 /* StarPlanetSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73225BEDBD80045AA99 /* StarPlanetSystem.swift */; };
 		FE40C73625BEDBFB0045AA99 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73525BEDBFB0045AA99 /* Star.swift */; };
 		FE40C73925BEDC240045AA99 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73825BEDC240045AA99 /* Planet.swift */; };
 		FE40C73C25BEDC830045AA99 /* NameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73B25BEDC830045AA99 /* NameGenerator.swift */; };
 		FE828A0F25B3154000E0A17C /* CustomUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE828A0E25B3154000E0A17C /* CustomUICollectionViewCell.swift */; };
-		FE828A1225B343A000E0A17C /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE828A1125B343A000E0A17C /* Structs.swift */; };
 		FE92A19D25B0EBE600E68BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */; };
 		FE92A19F25B0EBE600E68BCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92A19E25B0EBE600E68BCF /* SceneDelegate.swift */; };
 		FE92A1A125B0EBE600E68BCF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92A1A025B0EBE600E68BCF /* MainViewController.swift */; };
 		FE92A1A625B0EBEB00E68BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE92A1A525B0EBEB00E68BCF /* Assets.xcassets */; };
-		FEA98F8D25B5AF4D0049B1E2 /* AllFunctional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA98F8C25B5AF4D0049B1E2 /* AllFunctional.swift */; };
 		FEA98F9025B5B0050049B1E2 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA98F8F25B5B0050049B1E2 /* API.swift */; };
 		FEA98F9325B5B03C0049B1E2 /* BusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA98F9225B5B03C0049B1E2 /* BusinessLogic.swift */; };
 		FEA98F9825B5C7370049B1E2 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA98F9725B5C7370049B1E2 /* State.swift */; };
@@ -28,19 +26,17 @@
 /* Begin PBXFileReference section */
 		FE40C72C25BEDB7B0045AA99 /* Universe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Universe.swift; sourceTree = "<group>"; };
 		FE40C72F25BEDBAD0045AA99 /* Galaxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Galaxy.swift; sourceTree = "<group>"; };
-		FE40C73225BEDBD80045AA99 /* StarSolarSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarSolarSystem.swift; sourceTree = "<group>"; };
+		FE40C73225BEDBD80045AA99 /* StarPlanetSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarPlanetSystem.swift; sourceTree = "<group>"; };
 		FE40C73525BEDBFB0045AA99 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		FE40C73825BEDC240045AA99 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		FE40C73B25BEDC830045AA99 /* NameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameGenerator.swift; sourceTree = "<group>"; };
 		FE828A0E25B3154000E0A17C /* CustomUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUICollectionViewCell.swift; sourceTree = "<group>"; };
-		FE828A1125B343A000E0A17C /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		FE92A19925B0EBE600E68BCF /* MyUniverseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyUniverseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE92A19E25B0EBE600E68BCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FE92A1A025B0EBE600E68BCF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FE92A1A525B0EBEB00E68BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE92A1AA25B0EBEB00E68BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEA98F8C25B5AF4D0049B1E2 /* AllFunctional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFunctional.swift; sourceTree = "<group>"; };
 		FEA98F8F25B5B0050049B1E2 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FEA98F9225B5B03C0049B1E2 /* BusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLogic.swift; sourceTree = "<group>"; };
 		FEA98F9725B5C7370049B1E2 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -57,17 +53,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FE20665F25C0475400D302C5 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
 		FE40C72925BED50A0045AA99 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FE92A1A025B0EBE600E68BCF /* MainViewController.swift */,
+				FE828A0E25B3154000E0A17C /* CustomUICollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -77,12 +67,32 @@
 			children = (
 				FE40C72C25BEDB7B0045AA99 /* Universe.swift */,
 				FE40C72F25BEDBAD0045AA99 /* Galaxy.swift */,
-				FE40C73225BEDBD80045AA99 /* StarSolarSystem.swift */,
+				FE40C73225BEDBD80045AA99 /* StarPlanetSystem.swift */,
 				FE40C73525BEDBFB0045AA99 /* Star.swift */,
 				FE40C73825BEDC240045AA99 /* Planet.swift */,
 				FE40C73B25BEDC830045AA99 /* NameGenerator.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FE8165BB25C0D4FD0011091C /* Technical */ = {
+			isa = PBXGroup;
+			children = (
+				FEA98F8F25B5B0050049B1E2 /* API.swift */,
+				FEA98F9225B5B03C0049B1E2 /* BusinessLogic.swift */,
+			);
+			name = Technical;
+			sourceTree = "<group>";
+		};
+		FE8165BC25C0D5270011091C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FE92A1AA25B0EBEB00E68BCF /* Info.plist */,
+				FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */,
+				FE92A19E25B0EBE600E68BCF /* SceneDelegate.swift */,
+				FE92A1A525B0EBEB00E68BCF /* Assets.xcassets */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 		FE92A19025B0EBE500E68BCF = {
@@ -104,19 +114,11 @@
 		FE92A19B25B0EBE600E68BCF /* MyUniverseApp */ = {
 			isa = PBXGroup;
 			children = (
+				FE8165BC25C0D5270011091C /* App */,
+				FE8165BB25C0D4FD0011091C /* Technical */,
 				FE40C72B25BEDB690045AA99 /* Model */,
 				FE40C72925BED50A0045AA99 /* Controllers */,
 				FEA98F9625B5C6DE0049B1E2 /* StateMachine */,
-				FE828A1125B343A000E0A17C /* Structs.swift */,
-				FEA98F8C25B5AF4D0049B1E2 /* AllFunctional.swift */,
-				FE828A0E25B3154000E0A17C /* CustomUICollectionViewCell.swift */,
-				FEA98F8F25B5B0050049B1E2 /* API.swift */,
-				FEA98F9225B5B03C0049B1E2 /* BusinessLogic.swift */,
-				FE92A1AA25B0EBEB00E68BCF /* Info.plist */,
-				FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */,
-				FE92A19E25B0EBE600E68BCF /* SceneDelegate.swift */,
-				FE92A1A525B0EBEB00E68BCF /* Assets.xcassets */,
-				FE20665F25C0475400D302C5 /* Application */,
 			);
 			path = MyUniverseApp;
 			sourceTree = "<group>";
@@ -201,11 +203,9 @@
 				FE92A1A125B0EBE600E68BCF /* MainViewController.swift in Sources */,
 				FE40C72D25BEDB7B0045AA99 /* Universe.swift in Sources */,
 				FE92A19D25B0EBE600E68BCF /* AppDelegate.swift in Sources */,
-				FE40C73325BEDBD80045AA99 /* StarSolarSystem.swift in Sources */,
+				FE40C73325BEDBD80045AA99 /* StarPlanetSystem.swift in Sources */,
 				FE40C73625BEDBFB0045AA99 /* Star.swift in Sources */,
-				FEA98F8D25B5AF4D0049B1E2 /* AllFunctional.swift in Sources */,
 				FE40C73025BEDBAD0045AA99 /* Galaxy.swift in Sources */,
-				FE828A1225B343A000E0A17C /* Structs.swift in Sources */,
 				FEA98F9825B5C7370049B1E2 /* State.swift in Sources */,
 				FE828A0F25B3154000E0A17C /* CustomUICollectionViewCell.swift in Sources */,
 				FE40C73925BEDC240045AA99 /* Planet.swift in Sources */,
