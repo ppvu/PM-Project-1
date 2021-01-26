@@ -41,6 +41,7 @@ final class SingleStarPlanetSystem {
             self.planetQ += 1
         }
     }
+    
     func addTime(timeSec: Int) {
         self.age = timeSec
     }
