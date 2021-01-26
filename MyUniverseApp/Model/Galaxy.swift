@@ -30,7 +30,7 @@ final class SingleGalaxy {
     
     init () {
         self.maxQofPlanest = 9
-        self.name = nameGenerator(prefix: "GL", length: 15)
+        self.name = nameGenerator(prefix: "GL", length: 5)
         self.info = GLInfo(name: self.name, age: self.age)
     }
     // возвращаем инфу о галактике

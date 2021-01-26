@@ -22,9 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             api.timeTick()
         }
         
-        
         let viewController = MainViewController()
-//        viewController.objects = universe.childs
+        
         viewController.api = api
         viewController.setData()
         viewController.title = "My Universes"

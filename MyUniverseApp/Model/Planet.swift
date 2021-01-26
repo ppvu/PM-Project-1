@@ -65,7 +65,7 @@ final class Planet {
     private var creationTime: Int = 0
     private var info: PlanetInfo
     init(pref: String) {
-        self.name = nameGenerator(prefix: pref, length: 15)
+        self.name = nameGenerator(prefix: pref, length: 5)
         self.type = PlanetTypes.allCases.randomElement()!
         self.mass = Int.random(in: 1...10)
         self.temp = Int.random(in: 1...10)
@@ -91,7 +91,7 @@ final class SinglePlanet {
     private var creationTime: Int = 0
     private var info: PlanetInfo
     init() {
-        self.name = nameGenerator(prefix: "PL", length: 15)
+        self.name = nameGenerator(prefix: "PL", length: 5)
         self.type = PlanetTypes.allCases.randomElement()!
         self.mass = Int.random(in: 1...10)
         self.temp = Int.random(in: 1...10)

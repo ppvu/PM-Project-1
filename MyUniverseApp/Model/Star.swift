@@ -56,7 +56,7 @@ final class MainStar {
     
     init(){
         
-        self.name = nameGenerator(prefix: "MS", length: 15)
+        self.name = nameGenerator(prefix: "MS", length: 5)
         self.type = TypeOfStar.allCases.randomElement()!
         self.evolutionStage = .young
         self.mass = Int.random(in: 1...100)

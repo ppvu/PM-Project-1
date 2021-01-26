@@ -15,8 +15,6 @@ struct SPSInfoS {
 // класс ЗПС
 final class SingleStarPlanetSystem {
     
-    
-    
     private var name: String
     private var lifeCicle: Int = 0
     private var age: Int = 0
@@ -24,9 +22,10 @@ final class SingleStarPlanetSystem {
     private var star: StarInfo
     private var planetQ: Int = 0
     private var info: SPSInfoS
+    
     init (maxPlnQ: Int) {
         self.maxQofPlanest = maxPlnQ
-        self.name = nameGenerator(prefix: "SPS", length: 15)
+        self.name = nameGenerator(prefix: "SPS", length: 5)
         self.info = SPSInfoS(name: self.name, age: self.age)
         star = MainStar().createStar()
     }

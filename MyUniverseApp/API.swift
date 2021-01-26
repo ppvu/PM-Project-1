@@ -20,7 +20,7 @@ final class API {
 //            print(self.api.getNames(data: .sps, elemQuantity: 100))
 //        }
     }
-    
+
     func getUNNamesList() -> [String] {
         let res = self.api.getNames(data: .universe, elemQuantity: 100, page: 1)
         print("resulteakfdsjlnfl", res)
@@ -35,7 +35,7 @@ final class API {
         print("invoke", parentName)
         return self.api.getChildrenNames(parentName: parentName , data: data, elemQuantity: elemQuantity, page: page)
     }
-    
+
     func timeTick() {
         self.api.time()
     }

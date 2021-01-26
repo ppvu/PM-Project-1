@@ -120,7 +120,7 @@ final class CreatorMode {
         self.universesNames[unName] = []
         print("createUniverse", self.universesNames)
     }
-    func createGalaxy(unName: String) {
+    private func createGalaxy(unName: String) {
         let gl = SingleGalaxy()
         let glName = gl.getGalaxyInfo().name
         self.galaxysInfo[glName] = gl.getGalaxyInfo()
@@ -152,4 +152,12 @@ final class CreatorMode {
         self.planetSatelitesInfo[plInfo.name] = pl.getPlanetSatelites()
         self.spsNames[spsName]?.append(plInfo.name)
     }
+    
+//    private func createStar(spsName: String) {
+//        let star = SingleStarPlanetSystem(maxPlnQ: self.maxQofPlanest)
+//        let starInfo = star.getStarInfo()
+//        self.spsStarNames.append(starInfo.name)
+//        self.spsStartInfo[starInfo.name] = starInfo
+//        self.spsNames[planetsName]?.append(starInfo.name)
+//    }
 }
