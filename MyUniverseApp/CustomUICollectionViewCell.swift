@@ -10,12 +10,6 @@ import UIKit
 class RoundedCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Variables
-    
-//    var imageName: String = "" {
-//        didSet {
-//            // TODO: implement imageView from imageName
-//        }
-//    }
 
     lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
@@ -44,7 +38,7 @@ class RoundedCollectionViewCell: UICollectionViewCell {
     
     lazy var secondaryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Temperature: 16\n Mass: 12\n Type: Spiral\n Age: 12"
+//        label.text = "Age: \n Type: "
         label.textColor = UIColor.black
         label.font = .systemFont(ofSize: 10)
         label.textAlignment = .center
@@ -72,6 +66,7 @@ class RoundedCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         setupCell()
+
     }
     
     required init?(coder: NSCoder) {
@@ -97,9 +92,10 @@ extension RoundedCollectionViewCell {
         setLayoutConstraints()
     }
     
+    // MARK: Setup Layout Constrains
     func setLayoutConstraints() {
         NSLayoutConstraint.activate([
-//            iconImageView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 24),
+
             iconImageView.centerYAnchor.constraint(equalTo: layoutMarginsGuide.centerYAnchor),
             iconImageView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 12),
             iconImageView.widthAnchor.constraint(equalToConstant: 38),
@@ -122,7 +118,7 @@ extension RoundedCollectionViewCell {
             infoButton.heightAnchor.constraint(equalToConstant: 38)
         ])
     }
-            
+    // MARK: Setup round corners for CollectionViewCell
     private func roundCorner() {
         self.layer.cornerRadius = 12
         self.layer.masksToBounds = true

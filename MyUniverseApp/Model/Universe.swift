@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct UNInfo {
+protocol ElementsInfo {
+    var name: String { get set }
+    var age: UInt { get set }
+}
+
+struct UNInfo: ElementsInfo {
     var name: String
-    var age: Int
+    var age: UInt
 }
 // класс вселенной
 
@@ -21,7 +26,7 @@ final class SingleUniverse {
     
     private var name: String
     private var lifeCicle: Int = 0
-    private var age: Int = 0
+    private var age: UInt = 0
     private var info: UNInfo
     
     init () {
@@ -32,7 +37,7 @@ final class SingleUniverse {
     func getUniverseInfo() -> UNInfo {
         return info
     }
-    func addTime(timeSec: Int) {
+    func addTime(timeSec: UInt) {
         self.age = timeSec
     }
 }

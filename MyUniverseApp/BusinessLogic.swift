@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum ElementNames {
+    case universe, galaxys, sps, spsStars, planets
+}
+
 //---------- Creator --------------
 final class CreatorMode {
     private var history = "\n Creation history:\n"
@@ -69,11 +73,7 @@ final class CreatorMode {
         return result
     }
     
-    enum elementsNames {
-        case universe, galaxys, sps, spsStars, planets
-    }
-    
-    func getNames(data: elementsNames, elemQuantity: Int = 20, page: Int = 1) -> [String] {
+    func getNames(data: ElementNames, elemQuantity: Int = 20, page: Int = 1) -> [String] {
         var res: [String] = []
         switch data {
             case .universe: res = Array(self.universesNames.keys)
@@ -85,7 +85,19 @@ final class CreatorMode {
         return self.pageSpliter(arr: res, elemQuantity: elemQuantity, page: UInt(page))
     }
     
-    func getChildrenNames(parentName: String, data: elementsNames, elemQuantity: Int = 20, page: UInt = 1) -> [String] {
+    func getUnInfo(data: ElementNames, elemQuantity: Int = 20, page: Int = 1) -> [ElementsInfo] {
+        var res: [ElementsInfo] = []
+        switch data {
+            case .universe: res = Array(self.universesInfo.values)
+            case .galaxys: res = Array(self.galaxysInfo.values)
+            case .sps: res = Array(self.spsInfo.values)
+            case .spsStars:  res = Array(self.spsStartInfo.values)
+            case .planets: res = Array(self.planetsInfo.values)
+        }
+        return res
+    }
+    
+    func getChildrenNames(parentName: String, data: ElementNames, elemQuantity: Int = 20, page: UInt = 1) -> [String] {
         var res: [String] = []
         switch data {
             case .universe: res = self.universesNames[parentName] ?? []
@@ -94,8 +106,31 @@ final class CreatorMode {
             case .spsStars: res = self.spsStarNames
             case .planets: res = self.planetsName
         }
-        print("getChildrenNames",res)
+        print("check2", parentName, data)
         return self.pageSpliter(arr: res, elemQuantity: elemQuantity, page: page)
+    }
+    
+    func getInfoArr(parentName: String, data: ElementNames, elemQuantity: Int = 20, page: UInt = 1) -> [ElementsInfo] {
+        let childrensNamesArr = self.getChildrenNames(parentName: parentName, data: data, elemQuantity: elemQuantity, page: page)
+        var res: [ElementsInfo] = []
+        var tempDict: [String : ElementsInfo] = [:]
+    
+        
+        switch data {
+        case .universe: tempDict = self.galaxysInfo
+        case .galaxys: tempDict = self.spsInfo
+        case .sps: tempDict = self.spsStartInfo
+        case .spsStars: tempDict = self.planetsInfo
+        case .planets: tempDict = self.planetsInfo
+        }
+        print("check", childrensNamesArr, self.spsInfo)
+        for item in childrensNamesArr {
+            
+            if let d = tempDict[item] {
+                res.append(d)
+            }
+        }
+        return res
     }
     
     private func tickTime() {
@@ -118,7 +153,7 @@ final class CreatorMode {
         self.universesInfo[unName] = un.getUniverseInfo()
         self.universesInstances[unName] = un
         self.universesNames[unName] = []
-        print("createUniverse", self.universesNames)
+        
     }
     private func createGalaxy(unName: String) {
         let gl = SingleGalaxy()
@@ -129,9 +164,7 @@ final class CreatorMode {
             self.galaxysNames[glName] = []
             self.universesNames[unName]?.append(glName)
         } else {
-            
             self.universesNames[unName]?.append(glName)
-            print("universes", self.universesNames)
         }
     }
     private func createSPS(glName: String) {
@@ -152,12 +185,5 @@ final class CreatorMode {
         self.planetSatelitesInfo[plInfo.name] = pl.getPlanetSatelites()
         self.spsNames[spsName]?.append(plInfo.name)
     }
-    
-//    private func createStar(spsName: String) {
-//        let star = SingleStarPlanetSystem(maxPlnQ: self.maxQofPlanest)
-//        let starInfo = star.getStarInfo()
-//        self.spsStarNames.append(starInfo.name)
-//        self.spsStartInfo[starInfo.name] = starInfo
-//        self.spsNames[planetsName]?.append(starInfo.name)
-//    }
 }
+

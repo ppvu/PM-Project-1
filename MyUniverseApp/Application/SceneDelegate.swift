@@ -26,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         viewController.api = api
         viewController.setData()
+        viewController.type = .universe
         viewController.title = "My Universes"
 //        viewController.timer = 
         

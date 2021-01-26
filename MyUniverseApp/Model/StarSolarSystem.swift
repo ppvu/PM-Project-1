@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct SPSInfoS {
+struct SPSInfoS: ElementsInfo {
     var name: String
-    var age: Int
+    var age: UInt
     
 }
-// класс ЗПС
+// StarPlanetSystem Class
 final class SingleStarPlanetSystem {
     
     private var name: String
     private var lifeCicle: Int = 0
-    private var age: Int = 0
+    private var age: UInt = 0
     private var maxQofPlanest: Int
     private var star: StarInfo
     private var planetQ: Int = 0
@@ -29,7 +29,7 @@ final class SingleStarPlanetSystem {
         self.info = SPSInfoS(name: self.name, age: self.age)
         star = MainStar().createStar()
     }
-    // возвращаем инфу о ЗПС
+    // return info about StarPlanetSystem
     func getSPSInfo() -> SPSInfoS {
         return self.info
     }
@@ -42,7 +42,7 @@ final class SingleStarPlanetSystem {
         }
     }
     
-    func addTime(timeSec: Int) {
+    func addTime(timeSec: UInt) {
         self.age = timeSec
     }
 }

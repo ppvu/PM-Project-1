@@ -21,9 +21,9 @@ final class API {
 //        }
     }
 
-    func getUNNamesList() -> [String] {
-        let res = self.api.getNames(data: .universe, elemQuantity: 100, page: 1)
-        print("resulteakfdsjlnfl", res)
+    func getUNNamesList() -> [ElementsInfo] {
+        let res = self.api.getUnInfo(data: .universe, elemQuantity: 100, page: 1)
+        
         return res
     }
     
@@ -31,10 +31,11 @@ final class API {
 //        return self.api.getNames(data: .universe, elemQuantity: 100, page: 1)
 //    }
     
-    func getChildrenNamesList(parentName: String, data: CreatorMode.elementsNames, elemQuantity: Int, page: UInt) -> [String] {
-        print("invoke", parentName)
-        return self.api.getChildrenNames(parentName: parentName , data: data, elemQuantity: elemQuantity, page: page)
+    func getChildrenNamesList(parentName: String, data: ElementNames, elemQuantity: Int, page: UInt) -> [ElementsInfo] {
+        
+        return self.api.getInfoArr(parentName: parentName , data: data, elemQuantity: elemQuantity, page: page)
     }
+    
 
     func timeTick() {
         self.api.time()

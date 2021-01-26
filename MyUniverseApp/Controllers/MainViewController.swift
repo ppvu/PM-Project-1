@@ -14,7 +14,9 @@ class MainViewController: UIViewController {
     var api: API?
     var timer: Int = 0
     
-    var objects: [String] = [] {
+    var type: ElementNames = .universe
+    
+    var objects: [ElementsInfo] = [] {
         didSet {
             collectionView?.reloadData()
         }
@@ -25,12 +27,8 @@ class MainViewController: UIViewController {
 //        var apiGet = self.api?.getUNNamesList()
 //        self.objects = apiGet as [String]?
         if let res = self.api?.getUNNamesList() {
-            print("set res data", res)
             self.objects = res
         }
-        
-    
-//        }
     }
 //
 //    func setGLData() {
@@ -44,6 +42,7 @@ class MainViewController: UIViewController {
         
         
         setupCollectionView()
+        
     }
     
     func setupCollectionView() {
@@ -66,24 +65,40 @@ class MainViewController: UIViewController {
         collectionView?.frame = view.bounds
     }
     
-    func getNewData(fromPar: String) {
+    func getNewData(fromPar: String, type: ElementNames) {
         
-        if let res = self.api?.getChildrenNamesList(parentName: fromPar, data: .universe, elemQuantity: 50, page: 1) {
+        if let res = self.api?.getChildrenNamesList(parentName: fromPar, data: type, elemQuantity: 50, page: 1) {
             print("for cell", res)
             self.objects = res
         }
-        
     }
+}
+
+func setChildrenType(type: ElementNames) -> ElementNames {
+    
+    var result: ElementNames = .universe
+    
+    switch type {
+    case .universe: result = .galaxys
+    case .galaxys: result = .sps
+    case .sps: result = .spsStars
+    case .spsStars: result = .planets
+    case .planets: result = .universe
+    }
+    
+    return result
 }
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = MainViewController()
         viewController.api = self.api
+        let chType = setChildrenType(type: self.type)
+        viewController.type = chType
         let object = objects[indexPath.row]
-        viewController.getNewData(fromPar: object)
-        viewController.title = object
-//        self.setGLData()
+        viewController.getNewData(fromPar: String(object.name), type: chType)
+        viewController.title = object.name
+
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
@@ -97,7 +112,9 @@ extension MainViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RoundedCollectionViewCell
         cell.backgroundColor = .systemFill
         let object = objects[indexPath.row]
-        cell.titleLabel.text = object
+//        print("11234", object)
+        cell.titleLabel.text = "\(object.name)"
+        cell.secondaryLabel.text = "\(object.name)\n age: \(object.age)"
         return cell
     }
     

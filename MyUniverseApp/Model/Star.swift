@@ -26,7 +26,7 @@ enum StarEvolutionStage: String, CaseIterable {
     case blackHole = "Black Hole"
 }
 // инфа о звезде
-struct StarInfo {
+struct StarInfo: ElementsInfo {
     var type : String
     var age: UInt
     var name: String
