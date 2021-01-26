@@ -82,6 +82,7 @@ final class CreatorMode {
             case .spsStars:  res = self.spsStarNames
             case .planets: res = self.planetsName
         }
+        print("check1", data, res)
         return self.pageSpliter(arr: res, elemQuantity: elemQuantity, page: UInt(page))
     }
     
@@ -94,11 +95,15 @@ final class CreatorMode {
             case .spsStars:  res = Array(self.spsStartInfo.values)
             case .planets: res = Array(self.planetsInfo.values)
         }
+        print("check1", data, res)
+
         return res
     }
     
     func getChildrenNames(parentName: String, data: ElementNames, elemQuantity: Int = 20, page: UInt = 1) -> [String] {
         var res: [String] = []
+        
+        
         switch data {
             case .universe: res = self.universesNames[parentName] ?? []
             case .galaxys: res = self.galaxysNames[parentName] ?? []
@@ -117,13 +122,13 @@ final class CreatorMode {
     
         
         switch data {
-        case .universe: tempDict = self.galaxysInfo
-        case .galaxys: tempDict = self.spsInfo
-        case .sps: tempDict = self.spsStartInfo
-        case .spsStars: tempDict = self.planetsInfo
+        case .universe: tempDict = self.universesInfo
+        case .galaxys: tempDict = self.galaxysInfo
+        case .sps: tempDict = self.spsInfo
+        case .spsStars: tempDict = self.spsStartInfo
         case .planets: tempDict = self.planetsInfo
         }
-        print("check", childrensNamesArr, self.spsInfo)
+        print(data)
         for item in childrensNamesArr {
             
             if let d = tempDict[item] {

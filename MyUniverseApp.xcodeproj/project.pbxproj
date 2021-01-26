@@ -60,9 +60,6 @@
 		FE20665F25C0475400D302C5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */,
-				FE92A19E25B0EBE600E68BCF /* SceneDelegate.swift */,
-				FE92A1A525B0EBEB00E68BCF /* Assets.xcassets */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -116,6 +113,9 @@
 				FEA98F8F25B5B0050049B1E2 /* API.swift */,
 				FEA98F9225B5B03C0049B1E2 /* BusinessLogic.swift */,
 				FE92A1AA25B0EBEB00E68BCF /* Info.plist */,
+				FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */,
+				FE92A19E25B0EBE600E68BCF /* SceneDelegate.swift */,
+				FE92A1A525B0EBEB00E68BCF /* Assets.xcassets */,
 				FE20665F25C0475400D302C5 /* Application */,
 			);
 			path = MyUniverseApp;
