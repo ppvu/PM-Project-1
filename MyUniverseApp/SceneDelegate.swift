@@ -18,11 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         let api = API()
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            api.timeTick()
-        }
         
         let viewController = MainViewController()
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            api.timeTick()
+            viewController.timeTick()
+        }
         
         viewController.api = api
         viewController.setData()

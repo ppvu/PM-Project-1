@@ -14,6 +14,7 @@ enum GalaxyType: String, CaseIterable {
 }
 
 struct GLInfo: ElementsInfo {
+    var mass: Int
     var name: String
     var age: UInt
     var type: GalaxyType
@@ -24,6 +25,7 @@ final class SingleGalaxy {
     private var name: String
     private var lifeCicle: Int = 0
     private var age: UInt = 0
+    private var mass: Int = 0
     private var type = GalaxyType.allCases.randomElement()!
     private var maxQofPlanest: Int
     private var info: GLInfo
@@ -31,7 +33,10 @@ final class SingleGalaxy {
     init () {
         self.maxQofPlanest = 9
         self.name = nameGenerator(prefix: "GL", length: 5)
-        self.info = GLInfo(name: self.name, age: self.age, type: self.type)
+        self.info = GLInfo(mass: self.mass,
+                           name: self.name,
+                           age: self.age,
+                           type: self.type)
     }
     // Return info about Galaxies
     func getGalaxyInfo() -> GLInfo {

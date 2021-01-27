@@ -22,6 +22,8 @@ class MainViewController: UIViewController {
         }
     }
     
+    var parentName: String?
+    
     func setData() {
         if let res = self.api?.getUNNamesList() {
             self.objects = res
@@ -31,6 +33,18 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+    }
+    
+    public func timeTick() {
+        print(parentName)
+        DispatchQueue.main.async {
+//            if let parentName = self.parentName {
+//                self.getNewData(fromPar: parentName, type: self.type)
+//            } else {
+//                self.setData()
+//            }
+            self.collectionView?.reloadData()
+        }
     }
     
     func setupCollectionView() {
@@ -84,6 +98,7 @@ extension MainViewController: UICollectionViewDelegate {
         if parentPrefix != "MS" && parentPrefix != "SPL" {
             let viewController = MainViewController()
             viewController.api = self.api
+            viewController.parentName = parentName
             
             let chType = setChildrenType(type: self.type)
             viewController.type = chType
@@ -106,7 +121,7 @@ extension MainViewController: UICollectionViewDataSource {
         
         let object = objects[indexPath.row]
         cell.titleLabel.text = "\(object.name)"
-        cell.secondaryLabel.text = "\(object.name)\n age: \(object.age)"
+        cell.secondaryLabel.text = "age: \(object.age)\n mass: \(object.mass)"
         return cell
     }
     
