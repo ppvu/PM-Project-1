@@ -38,6 +38,9 @@ final class SingleGalaxy {
                            age: self.age,
                            type: self.type)
     }
+}
+
+extension SingleGalaxy {
     // Return info about Galaxies
     func getGalaxyInfo() -> GLInfo {
         return info

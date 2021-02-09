@@ -33,6 +33,9 @@ final class SingleUniverse {
         self.name = nameGenerator(prefix: "UN", length: 5)
         self.info = UNInfo(name: self.name, age: self.age, mass: self.mass)
     }
+}
+
+extension SingleUniverse {
     // Return info about Universe
     func getUniverseInfo() -> UNInfo {
         return info

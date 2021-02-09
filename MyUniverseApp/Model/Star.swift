@@ -51,9 +51,6 @@ final class MainStar {
     private var creationTime: Int = 0
     private var info: StarInfo
     
-//    private var massToBecomeBlackHole: UInt
-//    private var radiusToBecomeBlackHole: UInt
-    
     init(){
         self.name = nameGenerator(prefix: "MS", length: 5)
         self.type = TypeOfStar.allCases.randomElement()!
@@ -73,6 +70,13 @@ final class MainStar {
                              luminosity: self.luminosity,
                              creationTime: self.creationTime)
     }
+}
+
+extension MainStar {
+    private func ageGrow() {
+        age += 1
+    }
+    
     // Return the info about Stars
     func createStar() -> StarInfo {
         return info
@@ -81,27 +85,4 @@ final class MainStar {
     func addTime(timeSec: Int) {
         self.creationTime = timeSec
     }
-}
-
-extension MainStar {
-    private func ageGrow() {
-        age += 1
-    }
-    
-    //Next stage of evo
-    
-//    private func toTheNextStage() {
-//        switch evolutionStage {
-//        case .young:
-//            evolutionStage = .old
-//        case .old:
-//            evolutionStage = starFinalStage()
-//        default:
-//            return
-//        }
-//    }
-    
-//    private func starFinalStage() -> StarEvolutionStage {
-//       
-//    }
 }

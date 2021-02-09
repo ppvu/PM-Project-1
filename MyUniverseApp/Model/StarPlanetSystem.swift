@@ -34,6 +34,9 @@ final class SingleStarPlanetSystem {
                              age: self.age)
         self.star = MainStar().createStar()
     }
+}
+
+extension SingleStarPlanetSystem {
     // Return info about StarPlanetSystem
     func getSPSInfo() -> SPSInfoS {
         return self.info

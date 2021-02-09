@@ -11,22 +11,14 @@ class MainViewController: UIViewController {
     
     private var collectionView: UICollectionView?
     
+    var parentName: String?
     var api: API?
     var timer: Int = 0
-    
     var type: ElementNameForData = .universe
     
     var objects: [ElementsInfo] = [] {
         didSet {
             collectionView?.reloadData()
-        }
-    }
-    
-    var parentName: String?
-    
-    func setData() {
-        if let res = self.api?.getUNNamesList() {
-            self.objects = res
         }
     }
     
@@ -36,13 +28,12 @@ class MainViewController: UIViewController {
     }
     
     public func timeTick() {
-        print(parentName)
         DispatchQueue.main.async {
-//            if let parentName = self.parentName {
-//                self.getNewData(fromPar: parentName, type: self.type)
-//            } else {
-//                self.setData()
-//            }
+            if let parentName = self.parentName {
+                self.getNewData(fromPar: parentName, type: self.type)
+            } else {
+                self.setData()
+            }
             self.collectionView?.reloadData()
         }
     }
@@ -68,25 +59,6 @@ class MainViewController: UIViewController {
         super.viewDidLayoutSubviews()
         collectionView?.frame = view.bounds
     }
-    
-    func getNewData(fromPar: String, type: ElementNameForData) {
-        if let res = self.api?.getChildrenNamesList(parentName: fromPar, data: type, elemQuantity: 50, page: 1) {
-            self.objects = res
-        }
-    }
-}
-
-func setChildrenType(type: ElementNameForData) -> ElementNameForData {
-    var result: ElementNameForData = .universe
-    
-    switch type {
-    case .universe: result = .galaxys
-    case .galaxys: result = .sps
-    case .sps: result = .planets
-    case .planets: result = .satellites
-    case .satellites: result = .satellites
-    }
-    return result
 }
 
 extension MainViewController: UICollectionViewDelegate {
@@ -134,5 +106,36 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.size.width - 40,
                       height: view.frame.size.width/3)
+    }
+}
+
+extension MainViewController {
+    func setData() {
+        if let res = self.api?.getUNNamesList() {
+            self.objects = res
+        }
+    }
+}
+
+extension MainViewController {
+    func getNewData(fromPar: String, type: ElementNameForData) {
+        if let res = self.api?.getChildrenNamesList(parentName: fromPar, data: type, elemQuantity: 50, page: 1) {
+            self.objects = res
+        }
+    }
+}
+
+extension MainViewController {
+    func setChildrenType(type: ElementNameForData) -> ElementNameForData {
+        var result: ElementNameForData = .universe
+        
+        switch type {
+        case .universe: result = .galaxys
+        case .galaxys: result = .sps
+        case .sps: result = .planets
+        case .planets: result = .satellites
+        case .satellites: result = .satellites
+        }
+        return result
     }
 }

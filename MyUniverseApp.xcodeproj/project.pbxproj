@@ -13,6 +13,7 @@
 		FE40C73625BEDBFB0045AA99 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73525BEDBFB0045AA99 /* Star.swift */; };
 		FE40C73925BEDC240045AA99 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73825BEDC240045AA99 /* Planet.swift */; };
 		FE40C73C25BEDC830045AA99 /* NameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73B25BEDC830045AA99 /* NameGenerator.swift */; };
+		FE6F5DF325D2C58500C736EA /* SinglePlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5DF225D2C58500C736EA /* SinglePlanet.swift */; };
 		FE828A0F25B3154000E0A17C /* CustomUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE828A0E25B3154000E0A17C /* CustomUICollectionViewCell.swift */; };
 		FE92A19D25B0EBE600E68BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */; };
 		FE92A19F25B0EBE600E68BCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92A19E25B0EBE600E68BCF /* SceneDelegate.swift */; };
@@ -30,6 +31,7 @@
 		FE40C73525BEDBFB0045AA99 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		FE40C73825BEDC240045AA99 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		FE40C73B25BEDC830045AA99 /* NameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameGenerator.swift; sourceTree = "<group>"; };
+		FE6F5DF225D2C58500C736EA /* SinglePlanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlanet.swift; sourceTree = "<group>"; };
 		FE828A0E25B3154000E0A17C /* CustomUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUICollectionViewCell.swift; sourceTree = "<group>"; };
 		FE92A19925B0EBE600E68BCF /* MyUniverseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyUniverseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				FE40C73225BEDBD80045AA99 /* StarPlanetSystem.swift */,
 				FE40C73525BEDBFB0045AA99 /* Star.swift */,
 				FE40C73825BEDC240045AA99 /* Planet.swift */,
+				FE6F5DF225D2C58500C736EA /* SinglePlanet.swift */,
 				FE40C73B25BEDC830045AA99 /* NameGenerator.swift */,
 			);
 			path = Model;
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEA98F9325B5B03C0049B1E2 /* BusinessLogic.swift in Sources */,
+				FE6F5DF325D2C58500C736EA /* SinglePlanet.swift in Sources */,
 				FE92A1A125B0EBE600E68BCF /* MainViewController.swift in Sources */,
 				FE40C72D25BEDB7B0045AA99 /* Universe.swift in Sources */,
 				FE92A19D25B0EBE600E68BCF /* AppDelegate.swift in Sources */,
