@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Type of Stars
 enum TypeOfStar: String, CaseIterable {
     case protostar = "Protostar"
     case tTauriStar = "T-Tauri Star"
@@ -18,14 +17,14 @@ enum TypeOfStar: String, CaseIterable {
     case neutronStar = "Neutron Star"
     case superGiantStar = "Super Giant Star"
 }
-// Stars' Evolution Stage
+
 enum StarEvolutionStage: String, CaseIterable {
     case young = "Young"
     case old = "Old"
     case denceDwarf = "Dence Dwarf"
     case blackHole = "Black Hole"
 }
-// Create Star class
+
 final class MainStar {
     
     private var age: UInt = 0
@@ -57,7 +56,6 @@ extension MainStar {
         age += 1
     }
     
-    // Return the info about Stars
     func createStar() -> ElementsInfo {
         return info
     }

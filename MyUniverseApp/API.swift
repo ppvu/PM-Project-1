@@ -13,8 +13,8 @@ final class API {
     var api: CreatorMode = CreatorMode()
     
     init() {
-        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
-            print(self.api.getNames(data: .sps, elemQuantity: 100))
+        Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { timer in
+            self.api.getNames(data: .sps, elemQuantity: 100)
         }
     }
 }

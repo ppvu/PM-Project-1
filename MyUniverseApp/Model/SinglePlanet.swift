@@ -45,4 +45,8 @@ extension SinglePlanet {
     func addTime(timeSec: Int) {
         self.creationTime = timeSec
     }
+    
+    private func ageGrow() {
+        age += 1
+    }
 }

@@ -45,4 +45,8 @@ extension SingleStarPlanetSystem {
     func addTime(timeSec: UInt) {
         self.age = timeSec
     }
+    
+    private func ageGrow() {
+        age += 1
+    }
 }

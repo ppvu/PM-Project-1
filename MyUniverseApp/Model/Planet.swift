@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Planets' type
 enum PlanetTypes: String, CaseIterable {
     case terrestial = "Terrestial"
     case gasGiant = "Gas Giant"
@@ -41,5 +40,9 @@ final class Planet {
 extension Planet {
     func createPlanet() -> ElementsInfo {
         return info
+    }
+    
+    private func ageGrow() {
+        age += 1
     }
 }

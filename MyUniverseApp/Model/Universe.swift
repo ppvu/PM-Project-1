@@ -7,20 +7,11 @@
 
 import Foundation
 
-// MARK: - Protocol for all Space objects
+// MARK: - Struct for all Space objects
 struct ElementsInfo {
     var name: String
     var description: String
-//    var mass: Int { get set }
 }
-// MARK: - Universe struct
-//struct UNInfo: ElementsInfo {
-//    var name: String
-//    var description: String
-//
-////    var age: UInt
-////    var mass: Int
-//}
 
 final class SingleUniverse {
     
@@ -37,11 +28,13 @@ final class SingleUniverse {
 }
 
 extension SingleUniverse {
-    // Return info about Universe
     func getUniverseInfo() -> ElementsInfo {
         return info
     }
     func addTime(timeSec: UInt) {
         self.age = timeSec
+    }
+    private func ageGrow() {
+        age += 1
     }
 }

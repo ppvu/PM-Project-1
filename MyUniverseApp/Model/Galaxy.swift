@@ -13,7 +13,6 @@ enum GalaxyType: String, CaseIterable {
     case spiral = "Spiral"
 }
 
-// Create a Galaxy class
 final class SingleGalaxy {
     
     private var name: String
@@ -32,12 +31,15 @@ final class SingleGalaxy {
 }
 
 extension SingleGalaxy {
-    // Return info about Galaxies
     func getGalaxyInfo() -> ElementsInfo {
         return info
     }
     
     func addTime(timeSec: UInt) {
         self.age = timeSec
+    }
+    
+    private func ageGrow() {
+        age += 1
     }
 }
