@@ -15,18 +15,6 @@ enum PlanetTypes: String, CaseIterable {
     case dwarf = "Dwarf"
 }
 
-struct PlanetInfo: ElementsInfo {
-    var type : String
-    var age: UInt
-    var name: String
-    var mass: Int
-    var temperature: Int
-    var radius: Int
-    var satelitesQ: Int
-    var creationTime: Int
-}
-
-// Create Planet class
 final class Planet {
     private var name: String
     private var age: UInt
@@ -36,7 +24,7 @@ final class Planet {
     private var radius: Int
     private var satellites: Int
     private var creationTime: Int = 0
-    private var info: PlanetInfo
+    private var info: ElementsInfo
     
     init(pref: String) {
         self.name = nameGenerator(prefix: pref, length: 5)
@@ -46,20 +34,12 @@ final class Planet {
         self.temp = Int.random(in: 1...100)
         self.radius = Int.random(in: 1...100)
         self.satellites = Int.random(in: 0...4)
-        self.info = PlanetInfo(type: self.type.rawValue,
-                               age: self.age,
-                               name: self.name,
-                               mass: self.mass,
-                               temperature: self.temp,
-                               radius: self.radius,
-                               satelitesQ: self.satellites,
-                               creationTime: self.creationTime)
+        self.info = ElementsInfo(name: self.name, description: "Age: \(self.age)\nMass: \(self.mass)\nType: \(self.type.rawValue)")
     }
 }
 
 extension Planet {
-    // Return Planet Info
-    func createPlanet() -> PlanetInfo {
+    func createPlanet() -> ElementsInfo {
         return info
     }
 }

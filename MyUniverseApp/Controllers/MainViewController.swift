@@ -92,8 +92,8 @@ extension MainViewController: UICollectionViewDataSource {
         cell.backgroundColor = .systemFill
         
         let object = objects[indexPath.row]
-        cell.titleLabel.text = "\(object.name)"
-        cell.secondaryLabel.text = "age: \(object.age)\n mass: \(object.mass)"
+        cell.titleLabel.text = object.name
+        cell.secondaryLabel.text = object.description
         return cell
     }
     

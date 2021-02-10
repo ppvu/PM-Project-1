@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Class Planet
 final class SinglePlanet {
     private var name: String
     private var age: UInt = 0
@@ -16,9 +15,9 @@ final class SinglePlanet {
     private var temp: Int
     private var radius: Int
     private var satellites: Int
-    private var satellitesData: [PlanetInfo] = []
+    private var satellitesData: [ElementsInfo] = []
     private var creationTime: Int = 0
-    private var info: PlanetInfo
+    private var info: ElementsInfo
     
     init() {
         self.name = nameGenerator(prefix: "PL", length: 5)
@@ -30,23 +29,16 @@ final class SinglePlanet {
         for _ in 0...self.satellites {
             self.satellitesData.append(Planet(pref: "SPL").createPlanet())
         }
-        self.info = PlanetInfo(type: self.type.rawValue,
-                               age: self.age,
-                               name: self.name,
-                               mass: self.mass,
-                               temperature: self.temp,
-                               radius: self.radius,
-                               satelitesQ: self.satellites,
-                               creationTime: self.creationTime)
+        self.info = ElementsInfo(name: self.name, description: "Age: \(self.age)\nMass: \(self.mass)\nType: \(self.type.rawValue)")
     }
 }
 
 extension SinglePlanet {
-    func getPlanetInfo() -> PlanetInfo {
+    func getPlanetInfo() -> ElementsInfo {
         return info
     }
  
-    func getPlanetSatelites() -> [PlanetInfo] {
+    func getPlanetSatelites() -> [ElementsInfo] {
         return self.satellitesData
     }
     

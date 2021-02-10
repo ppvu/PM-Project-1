@@ -7,37 +7,38 @@
 
 import Foundation
 
-// Mark: - Protocol for all Space objects
-protocol ElementsInfo {
-    var name: String { get set }
-    var age: UInt { get set }
-    var mass: Int { get set }
-}
-// Mark: - Universe struct
-struct UNInfo: ElementsInfo {
+// MARK: - Protocol for all Space objects
+struct ElementsInfo {
     var name: String
-    var age: UInt
-    var mass: Int
+    var description: String
+//    var mass: Int { get set }
 }
+// MARK: - Universe struct
+//struct UNInfo: ElementsInfo {
+//    var name: String
+//    var description: String
+//
+////    var age: UInt
+////    var mass: Int
+//}
 
-// Create Universe class
 final class SingleUniverse {
     
-    private var name: String
+    var name: String
     private var lifeCicle: Int = 0
-    private var age: UInt = 0
+    var age: UInt = 0
     private var mass: Int = 0
-    private var info: UNInfo
+    private var info: ElementsInfo
     
     init () {
         self.name = nameGenerator(prefix: "UN", length: 5)
-        self.info = UNInfo(name: self.name, age: self.age, mass: self.mass)
+        self.info = ElementsInfo(name: self.name, description: "Age: \(self.age)")
     }
 }
 
 extension SingleUniverse {
     // Return info about Universe
-    func getUniverseInfo() -> UNInfo {
+    func getUniverseInfo() -> ElementsInfo {
         return info
     }
     func addTime(timeSec: UInt) {

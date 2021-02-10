@@ -13,12 +13,6 @@ enum GalaxyType: String, CaseIterable {
     case spiral = "Spiral"
 }
 
-struct GLInfo: ElementsInfo {
-    var mass: Int
-    var name: String
-    var age: UInt
-    var type: GalaxyType
-}
 // Create a Galaxy class
 final class SingleGalaxy {
     
@@ -28,21 +22,18 @@ final class SingleGalaxy {
     private var mass: Int = 0
     private var type = GalaxyType.allCases.randomElement()!
     private var maxQofPlanest: Int
-    private var info: GLInfo
+    private var info: ElementsInfo
     
     init () {
         self.maxQofPlanest = 9
         self.name = nameGenerator(prefix: "GL", length: 5)
-        self.info = GLInfo(mass: self.mass,
-                           name: self.name,
-                           age: self.age,
-                           type: self.type)
+        self.info = ElementsInfo(name: self.name, description: "Age: \(self.age)\nMass: \(self.mass)\nType: \(self.type.rawValue)")
     }
 }
 
 extension SingleGalaxy {
     // Return info about Galaxies
-    func getGalaxyInfo() -> GLInfo {
+    func getGalaxyInfo() -> ElementsInfo {
         return info
     }
     

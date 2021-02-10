@@ -7,14 +7,6 @@
 
 import Foundation
 
-struct SPSInfoS: ElementsInfo {
-    var mass: Int
-    var name: String
-    var age: UInt
-    
-    
-}
-// StarPlanetSystem Class
 final class SingleStarPlanetSystem {
     
     private var name: String
@@ -22,27 +14,25 @@ final class SingleStarPlanetSystem {
     private var age: UInt = 0
     private var mass: Int = 0
     private var maxQofPlanest: Int
-    private var star: StarInfo
+    private var star: ElementsInfo
     private var planetQ: Int = 0
-    private var info: SPSInfoS
+    private var info: ElementsInfo
     
     init (maxPlnQ: Int) {
         self.maxQofPlanest = maxPlnQ
         self.name = nameGenerator(prefix: "SPS",length: 5)
-        self.info = SPSInfoS(mass: self.mass,
-                             name: self.name,
-                             age: self.age)
+        self.info = ElementsInfo(name: self.name, description: "Mass: \(self.mass)")
         self.star = MainStar().createStar()
     }
 }
 
 extension SingleStarPlanetSystem {
-    // Return info about StarPlanetSystem
-    func getSPSInfo() -> SPSInfoS {
+   
+    func getSPSInfo() -> ElementsInfo {
         return self.info
     }
     
-    func getStarInfo() -> StarInfo {
+    func getStarInfo() -> ElementsInfo {
         return self.star
     }
     

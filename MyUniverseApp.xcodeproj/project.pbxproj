@@ -14,6 +14,16 @@
 		FE40C73925BEDC240045AA99 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73825BEDC240045AA99 /* Planet.swift */; };
 		FE40C73C25BEDC830045AA99 /* NameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C73B25BEDC830045AA99 /* NameGenerator.swift */; };
 		FE6F5DF325D2C58500C736EA /* SinglePlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5DF225D2C58500C736EA /* SinglePlanet.swift */; };
+		FE6F5DFA25D2E06700C736EA /* CreationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5DF925D2E06700C736EA /* CreationStruct.swift */; };
+		FE6F5DFD25D2E1B600C736EA /* InstanceStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5DFC25D2E1B600C736EA /* InstanceStruct.swift */; };
+		FE6F5E0025D2E2C800C736EA /* NamesStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5DFF25D2E2C800C736EA /* NamesStruct.swift */; };
+		FE6F5E0325D2E39400C736EA /* InfoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5E0225D2E39400C736EA /* InfoStruct.swift */; };
+		FE6F5E0825D2E45200C736EA /* DefaultsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5E0725D2E45200C736EA /* DefaultsStruct.swift */; };
+		FE6F5E0C25D2E4D600C736EA /* PageSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5E0B25D2E4D600C736EA /* PageSplitter.swift */; };
+		FE6F5E1325D2E62A00C736EA /* TickTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5E1225D2E62A00C736EA /* TickTime.swift */; };
+		FE6F5E1625D2E69A00C736EA /* Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5E1525D2E69A00C736EA /* Creation.swift */; };
+		FE6F5E1925D2E71200C736EA /* GetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5E1825D2E71200C736EA /* GetInfo.swift */; };
+		FE6F5E2625D2E97200C736EA /* APIClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F5E2525D2E97200C736EA /* APIClassExtensions.swift */; };
 		FE828A0F25B3154000E0A17C /* CustomUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE828A0E25B3154000E0A17C /* CustomUICollectionViewCell.swift */; };
 		FE92A19D25B0EBE600E68BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */; };
 		FE92A19F25B0EBE600E68BCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92A19E25B0EBE600E68BCF /* SceneDelegate.swift */; };
@@ -32,6 +42,16 @@
 		FE40C73825BEDC240045AA99 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		FE40C73B25BEDC830045AA99 /* NameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameGenerator.swift; sourceTree = "<group>"; };
 		FE6F5DF225D2C58500C736EA /* SinglePlanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlanet.swift; sourceTree = "<group>"; };
+		FE6F5DF925D2E06700C736EA /* CreationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationStruct.swift; sourceTree = "<group>"; };
+		FE6F5DFC25D2E1B600C736EA /* InstanceStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceStruct.swift; sourceTree = "<group>"; };
+		FE6F5DFF25D2E2C800C736EA /* NamesStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesStruct.swift; sourceTree = "<group>"; };
+		FE6F5E0225D2E39400C736EA /* InfoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoStruct.swift; sourceTree = "<group>"; };
+		FE6F5E0725D2E45200C736EA /* DefaultsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsStruct.swift; sourceTree = "<group>"; };
+		FE6F5E0B25D2E4D600C736EA /* PageSplitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSplitter.swift; sourceTree = "<group>"; };
+		FE6F5E1225D2E62A00C736EA /* TickTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickTime.swift; sourceTree = "<group>"; };
+		FE6F5E1525D2E69A00C736EA /* Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creation.swift; sourceTree = "<group>"; };
+		FE6F5E1825D2E71200C736EA /* GetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfo.swift; sourceTree = "<group>"; };
+		FE6F5E2525D2E97200C736EA /* APIClassExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClassExtensions.swift; sourceTree = "<group>"; };
 		FE828A0E25B3154000E0A17C /* CustomUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUICollectionViewCell.swift; sourceTree = "<group>"; };
 		FE92A19925B0EBE600E68BCF /* MyUniverseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyUniverseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE92A19C25B0EBE600E68BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,9 +98,43 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FE6F5E1B25D2E77900C736EA /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				FE6F5E0225D2E39400C736EA /* InfoStruct.swift */,
+				FE6F5DFF25D2E2C800C736EA /* NamesStruct.swift */,
+				FE6F5DFC25D2E1B600C736EA /* InstanceStruct.swift */,
+				FE6F5DF925D2E06700C736EA /* CreationStruct.swift */,
+				FE6F5E0725D2E45200C736EA /* DefaultsStruct.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		FE6F5E1C25D2E79600C736EA /* BLExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				FE6F5E0B25D2E4D600C736EA /* PageSplitter.swift */,
+				FE6F5E1225D2E62A00C736EA /* TickTime.swift */,
+				FE6F5E1525D2E69A00C736EA /* Creation.swift */,
+				FE6F5E1825D2E71200C736EA /* GetInfo.swift */,
+			);
+			path = BLExtensions;
+			sourceTree = "<group>";
+		};
+		FE6F5E2225D2E92B00C736EA /* APIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				FE6F5E2525D2E97200C736EA /* APIClassExtensions.swift */,
+			);
+			path = APIExtensions;
+			sourceTree = "<group>";
+		};
 		FE8165BB25C0D4FD0011091C /* Technical */ = {
 			isa = PBXGroup;
 			children = (
+				FE6F5E2225D2E92B00C736EA /* APIExtensions */,
+				FE6F5E1C25D2E79600C736EA /* BLExtensions */,
+				FE6F5E1B25D2E77900C736EA /* Structs */,
 				FEA98F8F25B5B0050049B1E2 /* API.swift */,
 				FEA98F9225B5B03C0049B1E2 /* BusinessLogic.swift */,
 			);
@@ -202,20 +256,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE6F5E1625D2E69A00C736EA /* Creation.swift in Sources */,
 				FEA98F9325B5B03C0049B1E2 /* BusinessLogic.swift in Sources */,
 				FE6F5DF325D2C58500C736EA /* SinglePlanet.swift in Sources */,
 				FE92A1A125B0EBE600E68BCF /* MainViewController.swift in Sources */,
+				FE6F5E1925D2E71200C736EA /* GetInfo.swift in Sources */,
 				FE40C72D25BEDB7B0045AA99 /* Universe.swift in Sources */,
+				FE6F5E0325D2E39400C736EA /* InfoStruct.swift in Sources */,
 				FE92A19D25B0EBE600E68BCF /* AppDelegate.swift in Sources */,
+				FE6F5E0C25D2E4D600C736EA /* PageSplitter.swift in Sources */,
+				FE6F5E0025D2E2C800C736EA /* NamesStruct.swift in Sources */,
 				FE40C73325BEDBD80045AA99 /* StarPlanetSystem.swift in Sources */,
 				FE40C73625BEDBFB0045AA99 /* Star.swift in Sources */,
 				FE40C73025BEDBAD0045AA99 /* Galaxy.swift in Sources */,
+				FE6F5E1325D2E62A00C736EA /* TickTime.swift in Sources */,
 				FEA98F9825B5C7370049B1E2 /* State.swift in Sources */,
+				FE6F5DFA25D2E06700C736EA /* CreationStruct.swift in Sources */,
 				FE828A0F25B3154000E0A17C /* CustomUICollectionViewCell.swift in Sources */,
 				FE40C73925BEDC240045AA99 /* Planet.swift in Sources */,
 				FE40C73C25BEDC830045AA99 /* NameGenerator.swift in Sources */,
+				FE6F5E0825D2E45200C736EA /* DefaultsStruct.swift in Sources */,
 				FE92A19F25B0EBE600E68BCF /* SceneDelegate.swift in Sources */,
+				FE6F5E2625D2E97200C736EA /* APIClassExtensions.swift in Sources */,
 				FEA98F9025B5B0050049B1E2 /* API.swift in Sources */,
+				FE6F5DFD25D2E1B600C736EA /* InstanceStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

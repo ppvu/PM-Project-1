@@ -25,18 +25,6 @@ enum StarEvolutionStage: String, CaseIterable {
     case denceDwarf = "Dence Dwarf"
     case blackHole = "Black Hole"
 }
-// Info about Stars
-struct StarInfo: ElementsInfo {
-    var type : String
-    var age: UInt
-    var name: String
-    var evolutionStage: String
-    var mass: Int
-    var temperature: Int
-    var radius: Int
-    var luminosity: Int
-    var creationTime: Int
-}
 // Create Star class
 final class MainStar {
     
@@ -49,7 +37,7 @@ final class MainStar {
     private var radius: Int
     private var luminosity: Int
     private var creationTime: Int = 0
-    private var info: StarInfo
+    private var info: ElementsInfo
     
     init(){
         self.name = nameGenerator(prefix: "MS", length: 5)
@@ -60,15 +48,7 @@ final class MainStar {
         self.radius = Int.random(in: 1...100)
         self.luminosity = Int.random(in: 1...100)
         
-        self.info = StarInfo(type: self.type.rawValue,
-                             age: self.age,
-                             name: self.name,
-                             evolutionStage: self.evolutionStage.rawValue,
-                             mass: self.mass,
-                             temperature: self.temp,
-                             radius: self.radius,
-                             luminosity: self.luminosity,
-                             creationTime: self.creationTime)
+        self.info = ElementsInfo(name: self.name, description: "Age: \(self.age)\nMass: \(self.mass)\nType: \(self.type.rawValue)")
     }
 }
 
@@ -78,7 +58,7 @@ extension MainStar {
     }
     
     // Return the info about Stars
-    func createStar() -> StarInfo {
+    func createStar() -> ElementsInfo {
         return info
     }
     
